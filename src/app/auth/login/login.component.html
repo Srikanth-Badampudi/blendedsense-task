@@ -54,6 +54,7 @@
           >
             <span class="p-input-icon-right w-full">
               <i class="pi pi-info-circle"></i>
+
               <input
                 type="email"
                 pInputText
@@ -76,7 +77,10 @@
             [ngClass]="submitted ? 'mb-2' : 'mb-3'"
           >
             <span class="p-input-icon-right w-full">
-              <i class="pi {{ eyeIcon }} cursor-pointer" (click)="hideShowPass()"></i>
+              <i
+                class="pi {{ eyeIcon }} cursor-pointer"
+                (click)="hideShowPass()"
+              ></i>
 
               <input
                 [type]="type"
