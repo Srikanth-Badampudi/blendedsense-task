@@ -1,0 +1,121 @@
+.wrapper {
+  .login-page {
+    .alignment {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      position: relative;
+      z-index: 11;
+      .creative-logo {
+        position: absolute;
+        right: 0;
+        z-index: -1;
+      }
+    }
+
+    .login-form-div {
+      display: flex;
+      align-items: center;
+      .login-form-wrapper {
+        padding-top: 1rem;
+        border: 1px solid #d8d8d8;
+        border-radius: .3rem;
+        background-color: white;
+        z-index: 22;
+      }
+      .login-text {
+        font-weight: 600;
+        margin: 1rem 0rem;
+      }
+      .login-form {
+        width: 85%;
+        margin: 1.3rem auto;
+        .login-options {
+          height: 44px;
+          line-height: 44px;
+        }
+        .login-option-wrapper {
+          border-radius: 2rem;
+          border: 1px solid #d8d8d8;
+          .login-option-icon {
+          }
+        }
+
+        .inputField{
+            margin-bottom: 1rem;
+        }
+
+        .ForgetPassword {
+          color: #8066ff;
+          font-weight: 600;
+        }
+        .newAccount {
+          font-weight: 600;
+        }
+
+        .singup {
+          color: #8066ff;
+        }
+      }
+
+      .login-auth {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.7rem;
+        font-weight: 600;
+        font-size: 1rem;
+        img {
+          height: 1.1rem;
+        }
+      }
+    }
+
+    // .login-form-wrapper {
+    //   max-width: 440px;
+    //   padding: 20px 0;
+    //   background-color: white;
+    //   border: 1px solid green;
+    //   z-index: 22;
+    // }
+    // .login-Form {
+    //   display: flex;
+    //   flex-direction: column;
+    //   align-items: center;
+    //   z-index: 99;
+    //   width: 85%;
+    // }
+    // .login-text {
+    //   font-weight: 700;
+    //   font-size: 1rem;
+    //   margin: 1rem 0rem;
+    // }
+
+    // .login-options {
+    //   font-weight: bold;
+    //   font-size: 16px;
+    //   line-height: 22px;
+    //   text-align: center;
+    //   color: #686868;
+    //   border: 1px solid black;
+    //   border-radius: 1rem;
+    //   padding: 0.5rem 0rem;
+    //   .login-option {
+    //   }
+    //   .login-btn {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     gap: 1rem;
+    //   }
+    //   .google-auth {
+    //     height: 1.1rem;
+    //   }
+    // }
+  }
+}
+
+.p-inputtext:enabled:focus{
+  outline: none!important;
+  box-shadow: none;
+}

@@ -1,0 +1,144 @@
+<div class="continer wrapper h-screen">
+  <p-toast></p-toast>
+  <div class="grid login-page border-1 h-full px-5">
+    <div class="col-2 flex alignment">
+      <img
+        src="https://stage.blendedsense.com/img/producer.a65db3cf.svg"
+        class="h-30rem mb-5"
+      />
+    </div>
+
+    <div class="col-2 p-0 alignment">
+      <img
+        src="https://stage.blendedsense.com/img/businessOwner.bedd058c.svg"
+        class="h-28rem mb-7"
+      />
+    </div>
+
+    <div class="col-4 login-form-div">
+      <div class="border-1 text-center login-form-wrapper">
+        <img
+          src="https://stage.blendedsense.com/img/logo-colored.55621aa1.svg"
+          class="logo"
+          style="width: 75%"
+        />
+        <p class="login-text">LOGIN</p>
+
+        <form
+          class="login-form"
+          [formGroup]="loginForm"
+          (ngSubmit)="onSubmit()"
+        >
+          <div class="login-options">
+            <div class="login-option-wrapper">
+              <a
+                class="login-option"
+                href="https://stage.blendedsense.com/api//auth/google"
+              >
+                <span class="login-auth">
+                  <img
+                    src="https://stage.blendedsense.com/img/google.19b04ead.svg"
+                    class="login-option-icon"
+                  />
+                  Continue with Google
+                </span>
+              </a>
+            </div>
+          </div>
+          <p-divider align="center">
+            <span>or</span>
+          </p-divider>
+          <div
+            class="p-inputgroup w-full"
+            [ngClass]="submitted ? 'mb-2' : 'mb-3'"
+          >
+            <span class="p-input-icon-right w-full">
+              <i class="pi pi-info-circle"></i>
+              <input
+                type="email"
+                pInputText
+                class="w-full"
+                placeholder="Email Address"
+                formControlName="email"
+              />
+            </span>
+          </div>
+          <small
+            class="text-red-500 text-left mb-1 block"
+            *ngIf="
+              (loginForm.controls['email'].errors?.['required'] && submitted) || (loginForm.controls['email'].errors?.['required'] && loginForm.controls['email'].dirty)
+            "
+            >Please provide your email address</small
+          >
+
+          <div
+            class="p-inputgroup w-full"
+            [ngClass]="submitted ? 'mb-2' : 'mb-3'"
+          >
+            <span class="p-input-icon-right w-full">
+              <i class="pi {{ eyeIcon }} cursor-pointer" (click)="hideShowPass()"></i>
+
+              <input
+                [type]="type"
+                pInputText
+                class="w-full"
+                placeholder="Password"
+                formControlName="password"
+              />
+            </span>
+          </div>
+          <small
+            class="text-red-500 text-left mt-1 block"
+            *ngIf="
+              (loginForm.controls['password'].errors?.['required'] && submitted) || (loginForm.controls['password'].errors?.['required'] && loginForm.controls['password'].dirty)
+            "
+            >Please provide your password</small
+          >
+
+          <p-button
+            type="submit"
+            label="Login with Email"
+            styleClass="mt-3 border-round-md"
+          ></p-button>
+
+          <div class="mt-5 mb-2">
+            <a class="ForgetPassword">Forget Password?</a>
+          </div>
+
+          <div>
+            <a class="newAccount"
+              >Need an account? <span class="singup">Sign Up</span></a
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col-2 alignment relative">
+      <img
+        src="https://stage.blendedsense.com/img/creative.cbaacd69.svg"
+        class="h-28rem mb-4 creative-logo"
+      />
+    </div>
+
+    <div class="col-2 alignment relative">
+      <img
+        src="https://stage.blendedsense.com/img/photoshootEquipment.c4da40ca.svg"
+        class="h-28rem mb-4"
+      />
+    </div>
+  </div>
+
+  <div
+    class="horizontal-line"
+    style="
+      position: relative;
+      top: -4.3rem;
+      left: -1rem;
+      z-index: -1;
+      width: 100vw;
+    "
+  >
+    <hr style="height: 0.3rem; background-color: gray" />
+  </div>
+</div>

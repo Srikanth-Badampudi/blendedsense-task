@@ -1,0 +1,53 @@
+.layout {
+  display: flex;
+  nav {
+    background-color: #262626;
+    transition: all .2s ease-out;
+    .active {
+      color: white !important;
+      background-color: #ffffff1a;
+    }
+  }
+
+  /*  Logo  */
+  .logo {
+    width: 100%;
+  }
+
+  .logo img {
+    width: 100%;
+  }
+  /* NavItem */
+  .Item {
+    display: flex;
+    cursor: pointer;
+  }
+
+  // .Items-container {
+  //   .ItemActive {
+  //     color: #939393;
+  //     background-color: #ffffff1a;
+  //   }
+
+  //   .Item-Inactive {
+  //     color: whit;
+  //     color: var(--NavItemInActiveColor);
+  //   }
+  // }
+
+  /* navFooter */
+
+  .HelpBtn {
+    background-color: var(--NavItemBackground) !important;
+  }
+
+  .body {
+    width: 100%;
+    .header {
+      border: 1px solid black;
+    }
+    .render-body {
+      height: calc(100% - 80px);
+    }
+  }
+}

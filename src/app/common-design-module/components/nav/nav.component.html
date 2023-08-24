@@ -1,0 +1,81 @@
+<div class="layout flex flex-row max-h-screen">
+  <nav
+    class="p-3 h-screen flex flex-column justify-content-between"
+    [ngClass]="sidebarVisible ? 'w-19rem' : 'w-4rem'"
+  >
+    <div class="content">
+      <div class="logo" *ngIf="sidebarVisible">
+        <img src="https://stage.blendedsense.com/img/logo.a39c6ea2.svg" />
+      </div>
+
+      <div class="Items-container mt-5 flex flex-column">
+        <a
+          class="border-round my-1 Item text-gray-600"
+          routerLink="/{{ Item.NavigationLink }}/"
+          routerLinkActive="active"
+          *ngFor="let Item of navItems"
+        >
+          <div class="Item-Logo p-2 flex justify-content-center">
+            <img src="{{ Item.ActiveIcon }}" />
+          </div>
+          <div class="Item-Label p-2" *ngIf="sidebarVisible">
+            {{ Item.name }}
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="nav-footer">
+      <div class="flex justify-content-between" *ngIf="sidebarVisible">
+        <p-button styleClass="border-round-xl py-2 px-3 HelpBtn">
+          <img
+            src="https://stage.blendedsense.com/img/comment.020ecb43.svg"
+            class="mr-2"
+          />
+          <span class="text-base">Help?</span>
+        </p-button>
+        <p-button styleClass="py-2 px-3" (click)="closeSideBar()"
+          ><i class="pi pi-angle-left pr-0" style="font-size: 1.3rem"></i
+          ><i class="pi pi-angle-right pl-0" style="font-size: 1.3rem"></i
+        ></p-button>
+      </div>
+      <p-button styleClass="p-1" *ngIf="!sidebarVisible" (click)="openSideBar()"
+        ><i class="pi pi-angle-left pr-0" style="font-size: 0.8rem"></i
+        ><i class="pi pi-angle-right pl-0" style="font-size: 0.8rem"></i
+      ></p-button>
+    </div>
+  </nav>
+
+  <div class="body">
+    <header
+      class="header border-gray-300 sticky top-0 z-1 bg-white"
+      [style]="{ height: '80px' }"
+    >
+      <div class="flex align-items-center justify-content-end mx-4 h-full">
+        <i class="pi pi-bell cursor-pointer" style="font-size: 1.5rem"></i>
+        <div
+          class="flex align-items-center mx-5 cursor-pointer"
+          (click)="menu.toggle($event)"
+        >
+          <p-avatar
+            styleClass="mr-2"
+            size="large"
+            image="https://d1wxmdsfzz1ho0.cloudfront.net/fit-in/48x48/profile-pics/profilePic-1689326034416.jpg"
+            [style]="{ 'border-radius': '1rem', overflow: 'hidden' }"
+          ></p-avatar>
+          <i
+            class="pi pi-angle-down cursor-pointer"
+            style="font-size: 1rem; color: rgba(128, 128, 128, 0.342)"
+          ></i>
+        </div>
+      </div>
+    </header>
+
+    <p-menu #menu [model]="items" [popup]="true"></p-menu>
+    <div class="render-body overflow-auto">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+  <!-- https://stage.blendedsense.com/img/logo.a39c6ea2.svg -->
+</div>
